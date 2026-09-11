@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">BirdAviary2.0</string>
-    <string name="title_activity_main">BirdAviary2.0</string>
+    <string name="app_name">BirdAviary 2.0</string>
+    <string name="title_activity_main">BirdAviary 2.0</string>
     <string name="package_name">com.birdaviary2.app</string>
     <string name="custom_url_scheme">com.birdaviary2.app</string>
+    <string name="server_client_id">923599076322-d4mo1qchirsu7bvu525pqur9fr3nld3d.apps.googleusercontent.com</string>
 </resources>
