@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  
+  /* Custom colors using the @theme directive */
+  --color-surface-50: oklch(0.97 0.01 260);
+  --color-surface-100: oklch(0.93 0.01 260);
+  --color-surface-200: oklch(0.82 0.02 260);
+  --color-surface-300: oklch(0.70 0.02 260);
+  --color-surface-400: oklch(0.55 0.02 260);
+  --color-surface-500: oklch(0.45 0.03 260);
+  --color-surface-600: oklch(0.35 0.03 260);
+  --color-surface-700: oklch(0.25 0.02 260);
+  --color-surface-800: oklch(0.20 0.02 260);
+  --color-surface-900: oklch(0.15 0.02 260);
+  --color-surface-950: oklch(0.10 0.02 260);
+  
+  --color-primary-400: oklch(0.75 0.18 165);
+  --color-primary-500: oklch(0.65 0.20 165);
+  --color-primary-600: oklch(0.55 0.20 165);
+}
+
+@layer base {
+  body {
+    @apply bg-surface-950 text-white font-sans antialiased;
+  }
+}
+
+/* Glassmorphism & Animations */
+.glass-card {
+  @apply bg-surface-800/60 backdrop-blur-md border border-white/10 rounded-xl shadow-lg;
+}
+
+.glass-panel {
+  @apply bg-surface-900/80 backdrop-blur-lg border-r border-white/10;
+}
+
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-surface-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-surface-600;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(20, 184, 166, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(20, 184, 166, 0); }
+}
+
+.animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
+.animate-slide-up { animation: slideUp 0.5s ease-out forwards; }
+.animate-slide-in { animation: slideIn 0.4s ease-out forwards; }
+.animate-pulse-glow { animation: pulseGlow 2s infinite; }
+
+/* Buttons */
+.btn-primary {
+  @apply px-4 py-2 bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-400 text-white rounded-lg font-medium shadow-lg shadow-primary-500/20 hover:shadow-primary-500/40 transform hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
+}
+
+.btn-secondary {
+  @apply px-4 py-2 bg-surface-700 hover:bg-surface-600 border border-white/10 text-white rounded-lg font-medium shadow-sm transform hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
+}
+
+.btn-ghost {
+  @apply px-4 py-2 bg-transparent hover:bg-white/5 text-slate-300 hover:text-white rounded-lg font-medium disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+/* Inputs */
+.input-field {
+  @apply w-full bg-surface-900/50 border border-white/10 rounded-lg px-4 py-2 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all duration-200;
+}
+
+.label {
+  @apply block text-sm font-medium text-slate-300 mb-1.5;
+}
+
+/* Badges */
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border;
+}
+
+.badge-success {
+  @apply bg-green-500/10 text-green-400 border-green-500/20;
+}
+
+.badge-warning {
+  @apply bg-amber-500/10 text-amber-400 border-amber-500/20;
+}
+
+.badge-danger {
+  @apply bg-red-500/10 text-red-400 border-red-500/20;
+}
+
+.badge-info {
+  @apply bg-blue-500/10 text-blue-400 border-blue-500/20;
+}
+
+.badge-neutral {
+  @apply bg-surface-700/50 text-slate-300 border-white/10;
+}

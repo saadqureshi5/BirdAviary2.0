@@ -1,0 +1,2 @@
+-- This serves as reference since SQLModel creates tables automatically
+-- Refer to Python models for the exact schema

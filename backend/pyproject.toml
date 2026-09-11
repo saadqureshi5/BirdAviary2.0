@@ -1,0 +1,15 @@
+[project]
+name = "bird-aviary-backend"
+version = "0.1.0"
+description = "FastAPI backend for Bird Aviary Management"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "sqlmodel",
+    "pydantic",
+    "python-multipart",
+    "aiofiles",
+    "pytest",
+    "httpx",
+    "python-dotenv"
+]
